@@ -3,6 +3,10 @@ package com.study;
 public class Main {
 
     public static void main(String[] args) {
-	    System.out.println("asfsaf");
+        String a = "asfasf";
+        String b = "wqrqwrwq";
+
+	    System.out.println(a.hashCode());
+        System.out.println(b.hashCode());
     }
 }
