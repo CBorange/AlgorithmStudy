@@ -7,14 +7,23 @@ import java.util.List;
 
 public class PhoneBook {
     public boolean solution(String[] phone_book) {
-        HashMap<String, Boolean> map = new HashMap<>();
+        //원본값 hashmap 만듦
+        HashMap<String, Boolean> masterMap = new HashMap<>(phone_book.length);
         for(int i=0; i < phone_book.length; ++i){
-            String current = phone_book[i];
-            String fullString = "";
-            for(int j=0; j < current.length(); ++i){
-                char temp = current.charAt(j);
-            }
+            masterMap.put(phone_book[i], false);
+        }
+        
+        // 조회
+        for(int i=0; i< phone_book.length; ++i){
+            StringBuilder sb = new StringBuilder();
+            for(int j=0; j < phone_book[i].length() - 1; ++j){
+                sb.append(phone_book[i].charAt(j));
+                String target = sb.toString();
 
+                if(masterMap.containsKey(target)){
+                    return false;
+                }
+            }
         }
         return true;
     }
